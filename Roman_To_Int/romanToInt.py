@@ -1,32 +1,28 @@
-class Solution:
+def romanToInt(s: str) -> int:
 
-    def romanToInt(s: str) -> int:
+    switch_romanToInt = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    }
 
-        switch_romanToInt = {
-            "I": 1,
-            "V": 5,
-            "X": 10,
-            "L": 50,
-            "C": 100,
-            "D": 500,
-            "M": 1000
-        }
+    number = 0
+    aux = 0
 
-        index = 0
-        number = 0
-        aux = 0
-        while index < len(s):
+    for index, value in enumerate(s):
 
-            if (index == len(s) - 1) or \
-                    (switch_romanToInt.get(s[index]) > switch_romanToInt.get(s[index+1])):
-                if aux == 0:
-                    number += switch_romanToInt.get(s[index])
-                else:
-                    number += switch_romanToInt.get(s[index]) - aux
-                    aux = 0
+        if (index == len(s) - 1) or \
+                (switch_romanToInt.get(value) >= switch_romanToInt.get(s[index + 1])):
+            if aux == 0:
+                number += switch_romanToInt.get(value)
             else:
-                aux = switch_romanToInt.get(s[index])
+                number += switch_romanToInt.get(value) - aux
+                aux = 0
+        else:
+            aux = switch_romanToInt.get(value)
 
-            index += 1
-
-        return number
+    return number
