@@ -6,7 +6,7 @@
 * This is a  function to reverse the vowels of a string.
 
 #### Why use Python?
-* It use a symple syntax so its's easier to read and understand, beginner friendly, and has a large and active community.
+* It uses a symple syntax so its's easier to read and understand, beginner friendly, and has a large and active community.
 
 #### Challenges faced while coding
 * The vowels has to admit uppercase and lowercase vowels ("y" its not considered as a vowel).
