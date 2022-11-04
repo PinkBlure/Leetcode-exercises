@@ -26,3 +26,4 @@ def romanToInt(s: str) -> int:
             aux = switch_romanToInt.get(value)
 
     return number
+
